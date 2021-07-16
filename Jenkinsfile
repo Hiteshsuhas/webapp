@@ -22,12 +22,7 @@ agent {
         
    
 
-        stage('Build') {
-            steps {
-                sh 'mvn clean package'
-            }
-            
-        }
+  
         
         stage('Stage 2') {
             steps {
