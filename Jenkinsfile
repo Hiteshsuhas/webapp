@@ -43,14 +43,14 @@ agent {
           }
         }
 
-        stage('Build') {
+        stage('Build ') {
             steps {
                 sh 'mvn clean package'
             }
             
         }
         
-        stage('Stage 2') {
+        stage('Stage 22') {
             steps {
                 echo 'Stage2 Hello world!'  
                 echo  'Stage2 $date'
