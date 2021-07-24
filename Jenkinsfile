@@ -82,8 +82,8 @@ agent {
 def notifyBuild(String buildStatus = 'STARTED', String colorCode = '#5492f7', String notify = '') {
 
   def project = 'webapp'
-  def channel = "#clops-jivox-promethean-qa-alerts"
-  def base = "https://github.com/anuwardeen-clops/${project}/commits/"
+  def channel = "@manoj.k"
+  def base = "https://github.com/Hiteshsuhas/webapp.git${project}/commits/"
 
   def commit = sh(returnStdout: true, script: 'git log -n 1 --format="%H"').trim()
   def link = "${base}${commit}"
@@ -93,7 +93,7 @@ def notifyBuild(String buildStatus = 'STARTED', String colorCode = '#5492f7', St
 
   def summary = "${buildStatus}: Job <${env.RUN_DISPLAY_URL}|${env.JOB_NAME} [${env.BUILD_NUMBER}]>\n${subject} ${notify}"
 
-  slackSend (channel: "#${channel}", color: colorCode, message: summary)
+  slackSend (channel: "${channel}", color: colorCode, message: summary)
 
 }
 
