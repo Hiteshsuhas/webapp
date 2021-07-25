@@ -2,7 +2,7 @@ pipeline {
 
 agent {
     node {
-      label 'assignment_node'
+      label 'node1'
     }
   }
   
@@ -22,9 +22,9 @@ agent {
         
     stage('SonarQube Analysis') {
       environment {
-        SCANNER_HOME = tool 'sonar-4.6.2'
-        ORGANIZATION = "demo_maven_pipeline"
-        PROJECT_NAME = "demo_maven_pipeline"
+        SCANNER_HOME = tool 'sonarscanner-4.6.2'
+        ORGANIZATION = "assignment_pipeline"
+        PROJECT_NAME = "assignment_pipeline"
       }
       steps {
         withSonarQubeEnv('SonarQube') {
