@@ -76,7 +76,7 @@ agent {
 def notifyBuild(String buildStatus = 'STARTED', String colorCode = '#5492f7', String notify = '') {
 
   def project = 'webapp'
-  def channel = "@manoj.k"
+  def channel = "@prabhu.p"
   def base = "https://github.com/Hiteshsuhas/webapp.git${project}/commits/"
 
   def commit = sh(returnStdout: true, script: 'git log -n 1 --format="%H"').trim()
